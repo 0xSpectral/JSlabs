@@ -1,0 +1,29 @@
+.index:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+
+.index:hover {
+     color: #95f605;  
+    text-decoration: none; 
+
+}
+
+.block1 {
+    width: 500px;
+    text-align: justify;
+}
+
+.img1 {
+    float:left; 
+    margin: 7px 7px 7px 0;
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.img2 {
+    float: right;
+    margin: 7px 7px 7px 0;
+    max-width: 64px;
+    max-height: 64px;
+}

@@ -1,0 +1,49 @@
+ul {
+    list-style-type: none;
+    display: inline-block;
+}
+
+
+nav ul {
+    text-align: left;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+    display: inline-block; 
+}
+
+a {
+    color: rgb(255, 255, 255);
+  
+    text-decoration: none;
+    padding: .3em 0.6em;
+}
+
+a:hover {
+    
+    padding: .9em .8em;
+    color: white;
+    background: rgb(255, 0, 0);
+    
+    
+}
+
+.index:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+
+.index:hover {
+     color: #95f605;  
+    text-decoration: none; 
+
+}
+
+nav {
+    background-color: chocolate;
+    display: flex;
+  
+}
+

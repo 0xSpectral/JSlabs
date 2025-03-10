@@ -1,0 +1,40 @@
+ul {
+    list-style-type: none;
+}
+
+
+nav ul {
+    text-align: center;
+    
+}
+
+nav ul li {
+    margin: 0 3rem;
+    display: inline-block; 
+}
+
+a {
+    color: blue;
+    border: 2px solid;
+    text-decoration: none;
+    padding: .3em 0.6em;
+}
+
+a:hover {
+    color: white;
+    background: gray;
+    border: 2px solid;
+    
+}
+
+.index:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+
+.index:hover {
+     color: #95f605;  
+    text-decoration: none; 
+
+}
+
