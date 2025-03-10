@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 5</title>
+         <link rel = "stylesheet" href = "5.css">
+    </head>
+
+    <body> 
+        <div>
+    <label for="day">День:</label>
+    <select id="day">
+        <!-- Дни будут заполнены скриптом -->
+    </select>
+
+    <label for="month">Месяц:</label>
+    <select id="month">
+        <option value="1">Январь</option>
+        <option value="2">Февраль</option>
+        <option value="3">Март</option>
+        <option value="4">Апрель</option>
+        <option value="5">Май</option>
+        <option value="6">Июнь</option>
+        <option value="7">Июль</option>
+        <option value="8">Август</option>
+        <option value="9">Сентябрь</option>
+        <option value="10">Октябрь</option>
+        <option value="11">Ноябрь</option>
+        <option value="12">Декабрь</option>
+    </select>
+
+    <label for="year">Год:</label>
+    <select id="year">
+        <!-- Годы будут заполнены скриптом -->
+    </select>
+</div>
+
+<p id="dateMessage"></p>
+        
+        <script> 
+        
+    const daySelect = document.getElementById('day');
+    const monthSelect = document.getElementById('month');
+    const yearSelect = document.getElementById('year');
+    const dateMessage = document.getElementById('dateMessage');
+
+    
+    const currentYear = new Date().getFullYear();
+    for (let year = currentYear - 30; year <= currentYear + 10; year++) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        yearSelect.appendChild(option);
+    }
+
+   
+    fillDays(31);
+
+    
+    function fillDays(days) {
+        daySelect.innerHTML = ''; 
+        for (let day = 1; day <= days; day++) {
+            const option = document.createElement('option');
+            option.value = day;
+            option.textContent = day;
+            daySelect.appendChild(option);
+        }
+    }
+
+   
+    function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    }
+
+
+    function updateDays() {
+        const selectedMonth = parseInt(monthSelect.value);
+        const selectedYear = parseInt(yearSelect.value);
+
+        let daysInMonth;
+
+        if (selectedMonth === 2) { 
+            daysInMonth = isLeapYear(selectedYear) ? 29 : 28;
+        } else if ([4, 6, 9, 11].includes(selectedMonth)) { 
+            daysInMonth = 30;
+        } else { 
+            daysInMonth = 31;
+        }
+
+        fillDays(daysInMonth);
+
+       
+        const selectedDay = parseInt(daySelect.value);
+        if (selectedDay > daysInMonth) {
+            daySelect.value = daysInMonth; 
+        }
+
+      
+        dateMessage.textContent = `Выбрана дата: ${daySelect.value}.${monthSelect.value}.${yearSelect.value}`;
+    }
+
+  
+    monthSelect.addEventListener('change', updateDays);
+    yearSelect.addEventListener('change', updateDays);
+    daySelect.addEventListener('change', () => {
+        dateMessage.textContent = `Выбрана дата: ${daySelect.value}.${monthSelect.value}.${yearSelect.value}`;
+    });
+
+    updateDays();
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 2</title>
+         <link rel = "stylesheet" href = "2.css">
+    </head>
+
+    <body> 
+        <input type="text" id="textInput" placeholder="Выделите текст на странице">
+<p>Это пример текста, который можно выделить.</p>
+<p>Еще один абзац для тестирования.</p>
+
+<div>
+    <label for="characters">Введите символы для строки:</label>
+    <input type="text" id="characters" placeholder="Пример: abc123">
+</div>
+
+<div>
+    <label for="length">Длина строки:</label>
+    <input type="number" id="length" placeholder="Введите длину">
+</div>
+
+<button onclick="generateRandomString()">Сгенерировать строку</button>
+
+<p id="random-string-output"></p>
+        <script> 
+            //A
+                
+    const inputElement = document.getElementById('textInput');
+
+   
+    document.addEventListener('mouseup', function() {
+   
+        const selectedText = window.getSelection().toString().trim();
+
+        
+        if (selectedText) {
+            inputElement.value = selectedText;
+        }
+    });
+
+    //B
+    function generateRandomString() {
+      
+        const allowedChars = document.getElementById('characters').value;
+
+        const stringLength = parseInt(document.getElementById('length').value);
+
+       
+        if (!allowedChars || isNaN(stringLength) || stringLength <= 0) {
+            alert("Пожалуйста, введите символы и корректную длину строки.");
+            return;
+        }
+
+        let randomString = '';
+        for (let i = 0; i < stringLength; i++) {
+            
+            const randomIndex = Math.floor(Math.random() * allowedChars.length);
+            randomString += allowedChars[randomIndex];
+        }
+
+        // Выводим результат
+        document.getElementById('random-string-output').textContent = `Случайная строка: ${randomString}`;
+    }
+
+        </script>
+    </body>
+
+</html>

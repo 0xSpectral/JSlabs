@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 3</title>
+         <link rel = "stylesheet" href = "3.css">
+    </head>
+
+    <body> 
+        <div>
+    <label><input type="checkbox" class="check-item"> Чекбокс 1</label><br>
+    <label><input type="checkbox" class="check-item"> Чекбокс 2</label><br>
+    <label><input type="checkbox" class="check-item"> Чекбокс 3</label><br>
+</div>
+
+<button onclick="checkAllBoxes()">Отметить все</button>
+        <script> 
+             function checkAllBoxes() {
+        
+        const allCheckboxes = document.querySelectorAll('.check-item');
+
+      
+        allCheckboxes.forEach(checkbox => {
+            checkbox.checked = true;
+        });
+    }
+        </script>
+    </body>
+
+</html>

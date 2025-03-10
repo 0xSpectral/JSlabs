@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 4</title>
+         <link rel = "stylesheet" href = "4.css">
+    </head>
+
+    <body> 
+        <div>
+    <label for="countryInput">Введите страну:</label>
+    <input type="text" id="countryInput" placeholder="Например, Россия">
+</div>
+
+<p id="countryList"></p>
+        
+        <script> 
+        
+    const inputField = document.getElementById('countryInput');
+    const countryParagraph = document.getElementById('countryList');
+
+  
+    inputField.addEventListener('keydown', function(event) {
+       
+        if (event.key === 'Enter') {
+           
+            const countryName = inputField.value.trim();
+
+       
+            if (countryName) {
+          
+                let currentText = countryParagraph.textContent;
+
+              
+                if (currentText) {
+                    currentText += ', ';
+                }
+
+             
+                currentText += countryName;
+
+              
+                countryParagraph.textContent = currentText;
+
+                
+                inputField.value = '';
+            }
+        }
+    });
+        </script>
+    </body>
+
+</html>

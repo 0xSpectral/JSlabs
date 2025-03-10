@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 1</title>
+         <link rel = "stylesheet" href = "1.css">
+    </head>
+
+    <body> 
+        <div>
+    <input type="number" class="num" placeholder="Введите число">
+    <input type="number" class="num" placeholder="Введите число">
+    <input type="number" class="num" placeholder="Введите число">
+</div>
+<input type="number" id="userInput" placeholder="Введите число">
+<p id="outputMessage"></p>
+
+<button onclick="calculateSum()">Посчитать сумму</button>
+
+<p id="result"></p>
+        <script> 
+        //A
+         function calculateSum() {
+       
+        const inputs = document.querySelectorAll('.num');
+
+        let sum = 0;
+
+        inputs.forEach(input => {
+            
+            const value = parseFloat(input.value) || 0; 
+            sum += value;
+        });
+
+       
+        document.getElementById('result').textContent = `Сумма: ${sum}`;
+    }
+
+        //B
+        
+    const inputField = document.getElementById('userInput');
+    const messageParagraph = document.getElementById('outputMessage');
+
+   
+    inputField.addEventListener('input', function() {
+        
+        const enteredValue = inputField.value;
+
+    
+        if (enteredValue.includes('3')) {
+            messageParagraph.textContent = 'Число содержит цифру 3!';
+        } else {
+            messageParagraph.textContent = 'Число не содержит цифру 3.';
+        }
+    });
+        </script>
+    </body>
+
+</html>
