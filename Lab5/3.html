@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 3</title>
+         <link rel = "stylesheet" href = "3.css">
+    </head>
+
+    <body> 
+        <script> 
+            //3
+            while (true) {
+       
+            let numberInput = prompt("Введите число от 15 до 90:");
+
+           
+            if (numberInput === null) {
+                console.log("Пользователь отменил ввод.");
+                break;
+            }
+
+            let number = parseInt(numberInput, 10);
+
+          
+            if (isNaN(number) || number < 15 || number > 90) {
+                alert("Число должно быть от 15 до 90. Попробуйте еще раз.");
+                continue; 
+            }
+
+          
+            let text = prompt("Введите текст длиной не менее 10 символов:");
+
+           
+            if (text === null) {
+                console.log("Пользователь отменил ввод.");
+                break;
+            }
+
+            
+            if (text.length < 10) {
+                alert("Текст должен содержать не менее 10 символов. Попробуйте еще раз.");
+                continue; 
+            }
+
+        
+            console.log("Введенное число: " + number);
+            console.log("Введенный текст: " + text);
+            break;
+        }
+        </script>
+    </body>
+
+</html>

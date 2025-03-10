@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 1</title>
+         <link rel = "stylesheet" href = "1.css">
+    </head>
+
+    <body> 
+        <script> 
+            //1
+            let position = prompt("Введите вашу должность (начальник, зам.начальника, секретарь): ");
+            let fullName = prompt("Введите ваше ФИО: ");
+
+           
+            if (position === "начальник" || position === "зам.начальника" || position === "секретарь") {
+            
+            if (position !== "секретарь") {
+                console.log("Добрый день, господин начальник");
+            }
+           
+            else {
+                console.log("Добрый день, " + fullName);
+            }
+            }
+            
+            else {
+            console.log("Ошибка: введена некорректная должность.");
+            }
+
+        </script>
+    </body>
+
+</html>

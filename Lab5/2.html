@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 2</title>
+         <link rel = "stylesheet" href = "2.css">
+    </head>
+
+    <body> 
+        <script> 
+             //2      
+            let minLength = Math.floor(Math.random() * 91) + 10; 
+            console.log("Минимальная длина первого текста: " + minLength);
+
+          
+            let firstText = prompt("Введите текст длиной не менее " + minLength + " символов:");
+
+           
+            if (firstText.length < minLength) {
+            console.log("Ошибка: длина текста меньше " + minLength + " символов.");
+            } else {
+            
+            let secondTextLength = Math.floor(firstText.length / 3);
+            let secondText = prompt("Введите текст длиной не более " + secondTextLength + " символов:");
+
+       
+            if (secondText.length > secondTextLength) {
+                console.log("Ошибка: длина второго текста больше " + secondTextLength + " символов.");
+            } else {
+               
+                let position = firstText.indexOf(secondText);
+
+                
+                if (position !== -1) {
+                console.log("Второй текст найден в первом на позиции: " + position);
+                } else {
+                console.log("Совпадений нет.");
+                }
+            }
+            }
+
+        </script>
+    </body>
+
+</html>

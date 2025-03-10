@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 5</title>
+         <link rel = "stylesheet" href = "5.css">
+    </head>
+
+    <body> 
+        <script> 
+            //5
+                                
+                let time = prompt("Введите время в формате HH:MI (например, 14:30):");
+
+               
+                let [hours, minutes] = time.split(":").map(Number);
+
+         
+                if (isNaN(hours) || isNaN(minutes) || hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
+                    console.log("Некорректный формат времени.");
+                } 
+                else {
+                  
+                    let timeOfDay;
+
+                    switch (true) {
+                        case hours >= 7 && hours < 12:
+                            timeOfDay = "утро";
+                            break;
+                        case hours >= 12 && hours < 17:
+                            timeOfDay = "день";
+                            break;
+                        case hours >= 17 && hours < 21:
+                            timeOfDay = "вечер";
+                            break;
+                        default:
+                            timeOfDay = "ночь";
+                    }
+
+                    console.log(`Время ${time} — это ${timeOfDay}.`);
+}
+
+        </script>
+    </body>
+
+</html>
