@@ -1,0 +1,31 @@
+
+.index:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+
+.index:hover {
+     color: #95f605;  
+    text-decoration: none; 
+
+}
+.part3 {
+     border-collapse: collapse;
+     table-layout: fixed;
+     border-style: dotted;
+     border-width: 1px;
+     width: 122px;
+     height: 55px;
+     border-color: gray;
+}
+
+.part31 {
+     border-collapse: collapse;
+     table-layout: fixed;
+     border-style: dotted;
+     border-width: 1px;
+     width: 100px;
+     height: 40px;
+     border-color: rgb(17, 17, 239);
+     border-radius: 5px;
+}

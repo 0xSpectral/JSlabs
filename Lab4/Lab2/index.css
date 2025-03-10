@@ -1,0 +1,133 @@
+body {
+    background: rgb(4, 4, 4) ;
+}
+.head-text1 {
+    color: #00f964;
+    font-size: 30px;
+}
+
+.head-text2 {
+    color: #00f964;
+}
+
+.table-head {
+     border-collapse: collapse;
+     table-layout: fixed;
+     border: 4px solid #00f964;
+     width: 1520px;
+     height: 70px;
+    
+}
+
+.button1 {
+     border-collapse: collapse;
+     table-layout: fixed;
+     border: 2px solid #00f964;
+     width: 100px;
+     height: 50px;
+     position: absolute;
+     left: 100px; 
+     top: 200px; 
+     
+}
+.text-button1:visited {
+    color: #00f964;  
+    text-decoration: underline; 
+    
+}
+.text-button1:hover {
+    color: #95f605;  
+    text-decoration: none; 
+    
+}
+
+.button2 {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 2px solid #00f964;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+     left: 500px; 
+     top: 200px; 
+}
+.text-button2:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+
+.text-button2:hover {
+    color: #95f605;  
+    text-decoration: none; 
+
+}
+
+.button3 {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 2px solid #00f964;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+     left: 900px; 
+     top: 200px; 
+}
+.text-button3:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+.text-button3:hover {
+    color: #95f605;  
+    text-decoration: none;
+
+
+
+}
+
+.button4 {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 2px solid #00f964;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+     left: 1350px; 
+     top: 200px; 
+}
+.text-button4:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+.text-button4:hover {
+    color: #95f605;  
+    text-decoration: none;
+}
+
+.table-down {
+     border-collapse: collapse;
+     table-layout: fixed;
+     border: 4px solid #00f964;
+     width: 1520px;
+     height: 90px;
+     position: absolute;
+     
+     top: 500px; 
+
+    
+}
+
+.down-text1 {
+    color: #00f964; 
+    
+    margin-left: 1200px ;
+}
+
+.down-text2 {
+    color: #00f964; 
+    margin-left: 1200px ;
+}
+
+.down-text3 {
+    color: #00f964; 
+    margin-left: 1200px ;
+}

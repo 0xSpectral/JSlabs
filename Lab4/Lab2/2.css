@@ -1,0 +1,15 @@
+#test p.bbb {
+    color: red; 
+    font-weight: bold; 
+}
+
+.index:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+
+.index:hover {
+     color: #95f605;  
+    text-decoration: none; 
+
+}
