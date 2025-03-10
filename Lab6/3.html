@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 3</title>
+         <link rel = "stylesheet" href = "3.css">
+    </head>
+
+    <body> 
+        <script> 
+           
+        function formatDate(date) {
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+
+            function addZero(num) {
+                return num < 10 ? `0${num}` : num;
+            }
+
+            return `${addZero(hours)}:${addZero(minutes)}:${addZero(seconds)} ${addZero(day)}.${addZero(month)}.${year}`;
+        }
+
+
+        let now = new Date();
+
+
+        console.log("Текущий день: " + now.getDate());
+        console.log("Текущий месяц: " + (now.getMonth() + 1));
+        console.log("Текущий год: " + now.getFullYear());
+
+
+        console.log("Текущая дата-время: " + formatDate(now));
+
+        </script>
+    </body>
+
+</html>

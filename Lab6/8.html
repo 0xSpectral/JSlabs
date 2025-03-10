@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 8</title>
+         <link rel = "stylesheet" href = "8.css">
+    </head>
+
+    <body> 
+        <input type="date" id="birthday" placeholder="Введите дату рождения">
+        <p id="result"></p>
+        <script> 
+            
+        let now = new Date();
+        let endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+        let differenceInMilliseconds = endOfDay.getTime() - now.getTime();
+        let differenceInSeconds = Math.floor(differenceInMilliseconds / 1000);
+        console.log("Количество секунд до конца дня: " + differenceInSeconds);
+
+        
+        document.getElementById("birthday").addEventListener("change", function () {
+            let birthdayInput = this.value;
+            let birthdayDate = new Date(birthdayInput);
+            let now = new Date();
+
+            birthdayDate.setFullYear(now.getFullYear());
+            if (birthdayDate < now) {
+                birthdayDate.setFullYear(now.getFullYear() + 1);
+            }
+
+            let differenceInMilliseconds = birthdayDate.getTime() - now.getTime();
+            let differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+            document.getElementById("result").textContent = "До дня рождения осталось: " + differenceInDays + " дней";
+        });
+
+        </script>
+    </body>
+
+</html>

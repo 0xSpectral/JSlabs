@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 6</title>
+         <link rel = "stylesheet" href = "6.css">
+    </head>
+
+    <body> 
+        <script> 
+            
+            let dateString = "1988-03-01T00:00:00"; 
+            let targetDate = Date.parse(dateString); 
+
+           
+            let now = new Date();
+            let currentTime = now.getTime(); 
+
+            
+            let differenceInMilliseconds = currentTime - targetDate;
+
+            let differenceInHours = Math.floor(differenceInMilliseconds / (1000 * 60 * 60));
+
+            console.log("Количество часов, прошедших с 1 марта 1988 года: " + differenceInHours);
+
+        </script>
+    </body>
+
+</html>

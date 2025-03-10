@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 7</title>
+         <link rel = "stylesheet" href = "7.css">
+    </head>
+
+    <body> 
+        <script> 
+            let now = new Date(); 
+           
+            let startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+         
+            let differenceInMilliseconds = now.getTime() - startOfDay.getTime();
+
+           
+            let differenceInSeconds = Math.floor(differenceInMilliseconds / 1000);
+
+            console.log("Количество секунд с начала дня: " + differenceInSeconds);   
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 1</title>
+         <link rel = "stylesheet" href = "1.css">
+    </head>
+
+    <body> 
+        <script> 
+            //while 
+            //1
+            let N = 2; 
+            let i = 1;
+
+            while (i <= 10 * N) {
+                console.log(i);
+                i++;
+            }
+            //2
+            let N2 = 2; 
+            let i2 = 1 * N2;
+
+            while (i2 <= 10 * (21 - N2)) {
+                console.log(i2);
+                i2++;
+            }
+            //3
+            let N3 = 2; 
+            let i3 = 0;
+
+            while (i3 <= 10 * N3) {
+                if (i3 % 2 === 0) {
+                    console.log(i3);
+                }
+                i3++;
+            }
+            //4
+            let N4 = 2; 
+            let sum4 = 0;
+            let i4 = 1;
+
+            while (i4 <= 10 * (21 - N4)) {
+                sum4 += i;
+                i4++;
+            }
+            console.log("Сумма: " + sum4);
+
+            //for
+            //1
+            let N11 = 2; 
+
+            for (let i11 = 1; i11 <= 10 * N11; i11++) {
+                console.log(i11);
+            }
+
+            //2
+            let N22 = 2; 
+
+            for (let i22 = 1 * N22; i22 <= 10 * (21 - N22); i22++) {
+                console.log(i22);
+            }
+
+            //3
+            let N33 = 2; 
+
+            for (let i33 = 0; i33 <= 10 * N33; i33++) {
+                if (i33 % 2 === 0) {
+                    console.log(i33);
+                }
+            }
+
+            //4
+            let N44 = 2; 
+            let sum44 = 0;
+
+            for (let i44 = 1; i44 <= 10 * (21 - N44); i44++) {
+                sum44 += i44;
+            }
+
+            console.log("Сумма: " + sum44);
+
+            // for массивы 
+            //1
+            let arr55 = [1, 2, 3, 4, 5];
+
+            for (let i55 = 0; i55 < arr55.length; i55++) {
+                console.log(arr[i55]);
+            }
+            //2
+            let arr66 = [1, 2, 3, 4, 5];
+            let result66 = 0;
+
+            for (let i66 = 0; i66 < arr66.length; i66++) {
+                result66 += arr66[i66];
+            }
+
+            console.log("Сумма элементов массива: " + result66);
+
+            //for -in
+            //1
+            let obj77 = { green: 'зеленый', red: 'красный', blue: 'голубой' };
+
+            for (let key77 in obj77) {
+                console.log(`Ключ: ${key77}, Значение: ${obj77[key77]}`);
+            }
+            //2
+            let obj88 = { Коля: '200', Вася: '300', Петя: '400' };
+
+            for (let key88 in obj88) {
+                console.log(`${key88} - зарплата ${obj88[key88]} долларов.`);
+            }
+            
+
+        </script>
+    </body>
+
+</html>

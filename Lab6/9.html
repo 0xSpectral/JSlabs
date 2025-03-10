@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 9</title>
+         <link rel = "stylesheet" href = "9.css">
+    </head>
+
+    <body> 
+        <h2>1. Отсчет от 0 до бесконечности</h2>
+        <p id="counter">0</p>
+
+        <h2>2. Отсчет с кнопкой остановки</h2>
+        <p id="counter2">0</p>
+        <button id="stopButton">Остановить</button>
+
+        <h2>3. Тикающие часики</h2>
+        <p id="clock">00:00:00</p>
+
+        <h2>4. Таймер обратного отсчета</h2>
+        <p id="countdown">10</p>
+        <button id="startButton">Старт</button>
+
+        <h2>5. Отсчет до полуночи</h2>
+        <p id="timeToMidnight">00:00:00</p>
+        <script> 
+            
+            let counter = 0;
+            setInterval(() => {
+                counter++;
+                document.getElementById("counter").textContent = counter;
+            }, 1000);
+
+            
+            let counter2 = 0;
+            let intervalId2 = setInterval(() => {
+                counter2++;
+                document.getElementById("counter2").textContent = counter2;
+            }, 1000);
+
+            document.getElementById("stopButton").addEventListener("click", () => {
+                clearInterval(intervalId2);
+            });
+
+            
+            function updateClock() {
+                let now = new Date();
+                let hours = String(now.getHours()).padStart(2, "0");
+                let minutes = String(now.getMinutes()).padStart(2, "0");
+                let seconds = String(now.getSeconds()).padStart(2, "0");
+                document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+            }
+
+            setInterval(updateClock, 1000);
+            updateClock();
+
+            
+            let count = 10;
+            let intervalId3;
+
+            function startCountdown() {
+                intervalId3 = setInterval(() => {
+                    count--;
+                    document.getElementById("countdown").textContent = count;
+                    if (count <= 0) {
+                        clearInterval(intervalId3);
+                    }
+                }, 1000);
+            }
+
+            document.getElementById("startButton").addEventListener("click", startCountdown);
+
+           
+            function updateTimeToMidnight() {
+                let now = new Date();
+                let midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+                let differenceInMilliseconds = midnight.getTime() - now.getTime();
+
+                let hours = Math.floor(differenceInMilliseconds / (1000 * 60 * 60));
+                let minutes = Math.floor((differenceInMilliseconds % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((differenceInMilliseconds % (1000 * 60)) / 1000);
+
+                document.getElementById("timeToMidnight").textContent = 
+                    `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+            }
+
+            setInterval(updateTimeToMidnight, 1000);
+            updateTimeToMidnight();
+
+        </script>
+    </body>
+
+</html>
