@@ -1,0 +1,162 @@
+<!DOCTYPE html> 
+<html lang = "ru"> 
+
+    <head> 
+         <meta charset="UTF-8">
+        <title> Обратная связь </title>
+        <link rel = "stylesheet" href = "index.css">
+        
+    </head>
+
+    <body> 
+        <header class = "main-header">
+            <img class = "logo" src="logo.png">
+            <p class = "logo-text">Разработчик: Веремчук Сергей Сергеевич<p>
+
+        </header>
+        
+        <nav class = "head">
+        <ul>
+            <li> 
+                <a href = "#">Главная </a>
+            </li>
+
+            <li> 
+                <a href = "#">Новости </a>
+            </li>
+                
+            <li> 
+                <a href = "#">Контакты </a>
+            </li>
+
+            <li> 
+                <a href = "#">О компании  </a>
+            </li>
+
+            <li> 
+                <a href = "#">Как добраться</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <br>
+     
+        <ul>
+            <li> 
+                <a class = "lab1" href = "">ЛАБ 1 </a>
+            </li>
+            <br>
+            <br>
+            <li> 
+                <a class = "lab2" href = "Lab2/index.html"> ЛАБ 2</a>
+            </li>
+            <br>
+            <br>    
+            <li> 
+                <a class = "lab3" href = "Lab3/index.html">ЛАБ 3</a>
+            </li>
+
+            
+        </ul>
+    
+        <table> 
+            <tr> 
+                <td> </td>
+
+
+            </tr>
+
+
+        </table>
+        
+
+        <script> 
+            let age = 18;
+            let a = 3;
+            let b = 7;
+            let names = "Сергей";
+            let str1 = "Привет,";
+            let str2 = "Мир!";
+            let sum = a + b;
+            let difference = a - b;
+            let multiplication = a * b;
+            let division = a / b;
+            
+    
+            console.log("Привет, " + names);
+            console.log("Привет, Мир!");
+            console.log("Это JavaScript\n" + "Сумма: " + sum + "\nРазность: " + difference + "\nПроизведение: " + multiplication + "\nЧастное: " + division );
+            console.log("Мне " + age + " лет");
+        
+            let name2 = prompt("Введите ваше второе имя: ");
+            console.log("Меня зовут: " + name2);
+            
+            let ad = prompt("Введите ваше число: ");
+            console.log("Ваше число в квадрате: " + ad*ad);
+
+
+            let str = "abcde"; 
+            console.log(str[0]);
+            console.log(str[2]);
+            console.log(str[4]);
+
+            let n = prompt("Введите ваше число: ");
+            let num = parseInt(n, 10);
+            let form = num*1000+(21-num)*10;
+            console.log("Подставляя число в формулу 'N*1000+(21-N)*10', где N ваше число мы получим: " + form)
+
+
+            
+            let arr1 = ['a', 'b', 'c'];
+            alert(arr1); 
+      
+            alert("Первый элемент: " + arr1[0]); 
+            alert("Второй элемент: " + arr1[1]); 
+            alert("Третий элемент: " + arr1[2]); 
+
+       
+            let arr2 = ['a', 'b', 'c', 'd'];
+            let resultStr = arr2[0] + '+' + arr2[1] + ', ' + arr2[2] + '+' + arr2[3];
+            alert(resultStr); 
+
+         
+            let arr3 = [2, 5, 3, 9];
+            let product1 = arr3[0] * arr3[1]; 
+            let product2 = arr3[2] * arr3[3];
+            let result = product1 + product2; 
+            alert("Результат: " + result); 
+
+            // Задание 1
+            var obj1 = { a: 1, b: 2, c: 3 };
+            console.log(obj1['c']); // 3
+            console.log(obj1.c); // 3
+
+            // Задание 2
+            var obj2 = { Коля: '1000', Вася: '500', Петя: '200' };
+            console.log("Зарплата Пети: " + obj2.Петя); // 200
+            console.log("Зарплата Коли: " + obj2['Коля']); // 1000
+
+            // Задание 3
+            var days = {
+            1: 'Понедельник',
+            2: 'Вторник',
+            3: 'Среда',
+            4: 'Четверг',
+            5: 'Пятница',
+            6: 'Суббота',
+            7: 'Воскресенье'
+            };
+            let today = new Date().getDay();
+            if (today === 0) today = 7; // Корректируем для воскресенья
+            console.log("Сегодня: " + days[today]);
+
+            // Задание 4
+            let day = 3; // Например, день недели = 3 (Среда)
+            console.log("День недели: " + days[day]); // Среда
+
+        </script>
+    </body>
+
+
+
+</html>

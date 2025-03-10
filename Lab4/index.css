@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #5CDB95;
+}
+
+.logo {
+    height: 20px;
+    width:  20px;
+}
+
+.logo-text {
+    font-size: 15px;
+}
+
+
+.main-header {
+  background-color: #c8c8c8;
+  padding: 3px;
+  display: flex; 
+  justify-content: space-evenly;
+  align-items: center; 
+}
+ 
+ul {
+    list-style-type: none;
+   
+}
+
+
+nav ul {
+    text-align: left;
+   
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+a {
+    color: #05386b;
+  
+    text-decoration: none;
+    padding: 12px 12px;
+}
+
+a:hover {
+    
+    padding: 12px 12px;
+    color: #ffffff;
+    background: #01cf5a;
+    
+    
+}
+
+nav {
+    background-color: #379683;
+    display: block;
+    padding: 12px;
+  
+}
+
+.lab {
+    color: #05386b;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+a.lab1{
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+} 
+a.lab1:hover { 
+  background: rgb(53, 167, 110); 
+}
+a.lab1:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+
+a.lab2{
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+} 
+a.lab2:hover { 
+  background: rgb(53, 167, 110); 
+}
+a.lab2:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+a.lab3{
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+  
+} 
+a.lab3:hover { 
+  background: rgb(53, 167, 110); 
+}
+a.lab3:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+table {
+     border-collapse: collapse;
+     
+     border: 2px solid #05386b ;
+     width: 1400px;
+     height: 900px;
+     margin-top: -150px;
+     margin-left: 90px;
+
+}
+
