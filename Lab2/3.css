@@ -1,0 +1,20 @@
+a:visited {
+    color: rgb(0, 255, 81); 
+    text-decoration: underline; 
+}
+
+
+a:hover {
+    color: brown; 
+    text-decoration: none; 
+}
+.index:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+
+.index:hover {
+     color: #95f605;  
+    text-decoration: none; 
+
+}
