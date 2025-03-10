@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 5</title>
+         <link rel = "stylesheet" href = "5.css">
+    </head>
+
+    <body> 
+         <!-- Задача 1 -->
+  <div id="parent">
+    <div id="child">Ребенок</div>
+  </div>
+  <button id="removeChildButton">Удалить #child</button>
+
+  <!-- Задача 2 -->
+  <ol id="list">
+    <li>Элемент 1</li>
+    <li>Элемент 2</li>
+    <li>Элемент 3</li>
+  </ol>
+  <button id="removeLastItemButton">Удалить последний элемент</button>
+
+  <!-- Задача 3 -->
+  <div id="clickToRemove">Кликни, чтобы удалить</div>
+
+  <!-- Задача 4 -->
+  <ol id="list2">
+    <li>Элемент A</li>
+    <li>Элемент B</li>
+    <li>Элемент C</li>
+  </ol>
+
+  <!-- Задача 5 -->
+  <input type="text" id="input" placeholder="Введите текст">
+  <button id="cloneInputButton">Клонировать инпут</button>
+        <script> 
+          //Удаление и клонирование 
+                 // 1
+    const removeChildButton = document.querySelector('#removeChildButton');
+    const child = document.querySelector('#child');
+
+    removeChildButton.addEventListener('click', () => {
+      if (child) {
+        child.remove();
+      }
+    });
+
+    // 2
+    const removeLastItemButton = document.querySelector('#removeLastItemButton');
+    const list = document.querySelector('#list');
+
+    removeLastItemButton.addEventListener('click', () => {
+      const lastChild = list.lastElementChild;
+      if (lastChild) {
+        lastChild.remove();
+      }
+    });
+
+    // 3
+    const clickToRemove = document.querySelector('#clickToRemove');
+
+    clickToRemove.addEventListener('click', () => {
+      clickToRemove.remove();
+    });
+
+    //  4
+    const list2 = document.querySelector('#list2');
+
+    list2.addEventListener('click', (event) => {
+      if (event.target.tagName === 'LI') {
+        event.target.remove();
+      }
+    });
+
+    // 5
+    const cloneInputButton = document.querySelector('#cloneInputButton');
+    const input = document.querySelector('#input');
+
+    cloneInputButton.addEventListener('click', () => {
+      const clone = input.cloneNode(true);
+      document.body.appendChild(clone);
+    });
+        </script>
+    </body>
+
+</html>

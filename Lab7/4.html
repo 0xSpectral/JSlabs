@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 4</title>
+         <link rel = "stylesheet" href = "4.css">
+    </head>
+
+    <body> 
+        <div class="block">
+        Родитель родителя
+        <div class="block">
+        Родитель
+        <div id="elem" class="block">Текущий элемент</div>
+        </div>
+    </div>
+        <script> 
+          //Родители
+          //1
+            const elem = document.querySelector('#elem');
+            const parent = elem.parentElement;
+
+            if (parent) {
+            parent.style.backgroundColor = 'red';
+            } else {
+            console.log('Родитель не найден');
+            }
+
+            //  2
+            const grandParent = parent ? parent.parentElement : null;
+
+            if (grandParent) {
+            grandParent.style.backgroundColor = 'red';
+            } else {
+            console.log('Родитель родителя не найден');
+            }
+
+        </script>
+    </body>
+
+</html>

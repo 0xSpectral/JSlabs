@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 1</title>
+         <link rel = "stylesheet" href = "1.css">
+    </head>
+
+    <body> 
+        <script> 
+          //1
+          //%
+          // Задание 1.1
+            const i = 2; 
+            const a = 10 * N;
+            const b = N + 5;
+
+            const remainder = a % b;
+            console.log(`Остаток от деления a на b: ${remainder}`);
+
+            // Задание 1.2
+            if (a % b === 0) {
+            console.log("Делится");
+            console.log(`Результат деления: ${a / b}`);
+            } else {
+            console.log("Делится с остатком");
+            console.log(`Остаток от деления: ${a % b}`);
+            }
+
+            //степень и корень
+            //1
+            const N1 = 2; 
+            const st1 = Math.pow(N1, 21 - N1); 
+            console.log(`Результат возведения в степень: ${st1}`);
+
+            //2
+            const number2 = 245;
+            const sqrtResult2 = Math.sqrt(number2); 
+            console.log(`Квадратный корень из 245: ${sqrtResult2}`);
+
+            //3
+            const array3 = [4, 2, 5, 19, 13, 0, 10];
+            let sumOfCubes3 = 0;
+
+            
+            for (let i3 = 0; i < array3.length; i++) {
+            sumOfCubes3 += Math.pow(array3[i3], 3); 
+            }
+
+            const sqrtOfSum3 = Math.sqrt(sumOfCubes3); 
+            console.log(`Квадратный корень из суммы кубов элементов массива: ${sqrtOfSum3}`);
+
+            //Работа с функциями округления
+            //  1
+            const N = 2; 
+            const sqrtValue = Math.sqrt(111 * N);
+
+            const roundedToInteger = Math.round(sqrtValue);
+            const roundedToTenths = sqrtValue.toFixed(1);
+            const roundedToHundredths = sqrtValue.toFixed(2);
+
+            console.log(`Квадратный корень из ${111 * N}: ${sqrtValue}`);
+            console.log(`Округление до целых: ${roundedToInteger}`);
+            console.log(`Округление до десятых: ${roundedToTenths}`);
+            console.log(`Округление до сотых: ${roundedToHundredths}`);
+
+            //  2
+            const sqrtValue2 = Math.sqrt(111 * (21 - N));
+
+            const rounded = {
+            floor: Math.floor(sqrtValue2),
+            ceil: Math.ceil(sqrtValue2),
+            };
+
+            console.log(`Квадратный корень из ${111 * (21 - N)}: ${sqrtValue2}`);
+            console.log(`Округление в меньшую сторону: ${rounded.floor}`);
+            console.log(`Округление в большую сторону: ${rounded.ceil}`);
+            console.log("Объект с результатами округления:", rounded);
+
+            // максимальное минимальное число
+            //1
+            const numbers = [4, -2, 5, 19, -130, 0, 10];
+
+           
+            const minNumber = Math.min(...numbers); 
+            const maxNumber = Math.max(...numbers); 
+
+            console.log(`Минимальное число: ${minNumber}`);
+            console.log(`Максимальное число: ${maxNumber}`);
+
+
+            // Работа с рандомом
+            // Задание 1
+            const Nу = 2; 
+            const randomNumber = Math.floor(Math.random() * (100 * Nу)) + 1;
+            console.log(`Случайное число от 1 до ${100 * Nу}: ${randomNumber}`);
+
+            // Задание 2
+            const randomArray = [];
+
+            for (let iу = 0; iу < 10; iу++) {
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+            randomArray.push(randomNumber);
+            }
+
+            console.log("Массив из 10 случайных чисел:", randomArray);
+
+            //Работа с модулем
+            // 1
+            const a34 = 10; 
+            const b34 = 15; 
+
+            const modulusDifference = Math.abs(a34 - b34);
+            console.log(`Модуль разности ${a34} и ${b34}: ${modulusDifference}`);
+
+            // 2
+            const c = Math.abs(a34 - b34);
+            console.log(`Результат (положительное значение): ${c}`);
+        </script>
+    </body>
+
+</html>

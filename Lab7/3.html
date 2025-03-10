@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 3</title>
+         <link rel = "stylesheet" href = "3.css">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body> 
+        <div class="block">Сосед сверху</div>
+        <div id="elem" class="block">Текущий элемент</div>
+        <div class="block">Сосед снизу</div>
+        <div class="block">Сосед снизу соседа снизу</div>
+        <script> 
+          // Соседи
+            // 1
+            const elem = document.querySelector('#elem');
+            const previousSibling = elem.previousElementSibling;
+
+            if (previousSibling) {
+            previousSibling.textContent += '!';
+            } else {
+            console.log('Соседа сверху нет');
+            }
+
+            //  2
+            const nextSibling = elem.nextElementSibling;
+
+            if (nextSibling) {
+            nextSibling.textContent += '!';
+            } else {
+            console.log('Соседа снизу нет');
+            }
+
+            // 3
+            if (nextSibling) {
+            const nextNextSibling = nextSibling.nextElementSibling;
+            if (nextNextSibling) {
+                nextNextSibling.textContent += '!';
+            } else {
+                console.log('Соседа снизу соседа снизу нет');
+            }
+            } else {
+            console.log('Соседа снизу нет');
+            }
+
+        </script>
+    </body>
+
+</html>

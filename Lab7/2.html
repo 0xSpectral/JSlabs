@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 2</title>
+         <link rel = "stylesheet" href = "2.css">
+    </head>
+
+    <body> 
+        <div id="elem">
+        <p>Первый потомок</p>
+        <p>Второй потомок</p>
+        <p>Третий потомок</p>
+        </div>
+        <script> 
+          //Потомки
+        // 1
+            const elem = document.querySelector('#elem');
+            const firstChild = elem.firstElementChild;
+            firstChild.style.color = 'red';
+
+            //  2
+            const lastChild = elem.lastElementChild;
+            lastChild.style.color = 'red';
+
+            //  3
+            const children = elem.children;
+            for (let i = 0; i < children.length; i++) {
+            children[i].textContent += '!';
+            }
+        </script>
+    </body>
+
+</html>
