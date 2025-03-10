@@ -1,0 +1,110 @@
+.index:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+
+.index:hover {
+     color: #95f605;  
+    text-decoration: none; 
+
+}
+.button1 {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    user-select: none;
+    background: rgb(45, 45, 45);
+    padding: .7em 8em;
+     border: 2px solid;
+    margin-top: 6px;
+   
+}
+
+a.button1:hover { 
+    background: rgb(255, 255, 255); 
+    color: rgb(45, 45, 45);
+    border: 2px solid;
+} 
+a.button1:active { 
+    background: rgb(206, 206, 206); 
+} 
+
+.button2 {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    user-select: none;
+    background: rgb(45, 45, 45);
+    padding: .7em 8em;
+    border: 2px solid;
+    margin-top: 6px;
+}
+
+a.button2:hover { 
+    background: rgb(255, 255, 255); 
+    color: rgb(45, 45, 45);
+    border: 2px solid;
+} 
+a.button2:active { 
+    background: rgb(206, 206, 206); 
+} 
+
+.button3 {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    user-select: none;
+    background: rgb(45, 45, 45);
+    padding: .7em 8em;
+     border: 2px solid;
+    margin-top: 6px;
+}
+
+a.button3:hover { 
+    background: rgb(255, 255, 255); 
+    color: rgb(45, 45, 45);
+    border: 2px solid;
+} 
+a.button3:active { 
+    background: rgb(206, 206, 206); 
+} 
+
+.button4 {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    user-select: none;
+    background: rgb(45, 45, 45);
+    padding: .7em 8em;
+     border: 2px solid;
+    margin-top: 6px;
+}
+
+a.button4:hover { 
+    background: rgb(255, 255, 255); 
+    color: rgb(45, 45, 45);
+    border: 2px solid;
+} 
+a.button4:active { 
+    background: rgb(206, 206, 206); 
+} 
+
+.button5 {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    user-select: none;
+    background: rgb(45, 45, 45);
+    padding: .7em 8em;
+    border: 2px solid;
+    margin-top: 6px;
+}
+
+a.button5:hover { 
+    background: rgb(255, 255, 255); 
+    color: rgb(45, 45, 45);
+    border: 2px solid;
+} 
+a.button5:active { 
+    background: rgb(206, 206, 206); 
+} 

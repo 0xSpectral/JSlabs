@@ -1,0 +1,15 @@
+.index:visited {
+    color: #00f964; 
+    text-decoration: underline; 
+}
+
+.index:hover {
+     color: #95f605;  
+    text-decoration: none; 
+
+}
+
+.spisok {
+    color: rgb(4, 251, 4);
+}
+
