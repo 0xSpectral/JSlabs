@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 3</title>
+         <link rel = "stylesheet" href = "3.css">
+    </head>
+
+    <body> 
+       <div class="test-container">
+        <h1>Тест: Выберите правильные ответы</h1>
+        <div class="question" id="question">
+            
+        </div>
+        <a href="#" class="next-link" id="next-link">Следующий вопрос</a>
+    </div>
+    <script> 
+        const questions = [
+                {
+                    question: "Какие из этих языков программирования являются высокоуровневыми?",
+                    options: ["JavaScript", "Ассемблер", "Python", "C++", "HTML"],
+                    correctAnswers: ["JavaScript", "Python", "C++"]
+                },
+                {
+                    question: "Какие из этих технологий используются для фронтенд-разработки?",
+                    options: ["React", "Node.js", "Angular", "Django", "Vue.js"],
+                    correctAnswers: ["React", "Angular", "Vue.js"]
+                },
+                {
+                    question: "Какие из этих тегов являются HTML-тегами?",
+                    options: ["<div>", "<function>", "<span>", "<class>", "<p>"],
+                    correctAnswers: ["<div>", "<span>", "<p>"]
+                }
+            ];
+
+            let currentQuestionIndex = 0;
+            let userAnswers = [];
+
+            const questionElement = document.getElementById('question');
+            const nextLink = document.getElementById('next-link');
+
+            function loadQuestion() {
+                const currentQuestion = questions[currentQuestionIndex];
+                questionElement.innerHTML = `
+                    <p>${currentQuestion.question}</p>
+                    <div class="options">
+                        ${currentQuestion.options.map((option, index) => `
+                            <label class="option">
+                                <input type="checkbox" name="answer" value="${option}">
+                                ${option}
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+
+                if (currentQuestionIndex === questions.length - 1) {
+                    nextLink.textContent = "Показать результат";
+                } else {
+                    nextLink.textContent = "Следующий вопрос";
+                }
+            }
+
+            function checkAnswers() {
+                const selectedOptions = Array.from(document.querySelectorAll('input[name="answer"]:checked'))
+                    .map(input => input.value);
+                userAnswers.push(selectedOptions);
+            }
+
+            function showResult() {
+                let correctCount = 0;
+                userAnswers.forEach((answer, index) => {
+                    const correctAnswers = questions[index].correctAnswers;
+                    if (answer.sort().toString() === correctAnswers.sort().toString()) {
+                        correctCount++;
+                    }
+                });
+
+                questionElement.innerHTML = `
+                    <div class="result">
+                        Вы ответили правильно на ${correctCount} из ${questions.length} вопросов!
+                    </div>
+                `;
+                nextLink.style.display = "none";
+            }
+
+            nextLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                checkAnswers();
+
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    loadQuestion();
+                } else {
+                    showResult();
+                }
+            });
+
+          
+            loadQuestion();
+    </script>
+        
+        
+    </body>
+        
+</html>

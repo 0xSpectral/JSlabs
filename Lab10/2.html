@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 2</title>
+         <link rel = "stylesheet" href = "2.css">
+    </head>
+
+    <body> 
+        <div class="game-container">
+        <h1>Крестики-нолики</h1>
+        <div class="board" id="board">
+         
+        </div>
+        <button onclick="resetGame()" class="reset-button">Новая игра</button>
+        <div class="status" id="status">Ход: X</div>
+        </div>
+        <audio id="clickSound" src="click.wav"></audio>
+        <audio id="winSound" src="win.wav"></audio>
+        <script> 
+            const board = document.getElementById('board');
+            const status = document.getElementById('status');
+            const clickSound = document.getElementById('clickSound');
+            const winSound = document.getElementById('winSound');
+
+            let currentPlayer = 'X';
+            let gameState = Array(16).fill('');
+            let gameActive = true;
+
+            for (let i = 0; i < 16; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.addEventListener('click', () => handleCellClick(i));
+                board.appendChild(cell);
+            }
+
+            function handleCellClick(index) {
+                if (!gameActive || gameState[index] !== '') return;
+
+                gameState[index] = currentPlayer;
+                const cell = board.children[index];
+                cell.textContent = currentPlayer;
+                cell.classList.add(currentPlayer);
+
+                clickSound.play();
+
+                if (checkWin()) {
+                    status.textContent = `Игрок ${currentPlayer} победил!`;
+                    winSound.play();
+                    gameActive = false;
+                    return;
+                }
+
+                if (gameState.every(cell => cell !== '')) {
+                    status.textContent = 'Ничья!';
+                    gameActive = false;
+                    return;
+                }
+
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                status.textContent = `Ход: ${currentPlayer}`;
+            }
+
+            function checkWin() {
+                const winPatterns = [
+                    [0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15], 
+                    [0, 4, 8, 12], [1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15], 
+                    [0, 5, 10, 15], [3, 6, 9, 12] 
+                ];
+
+                return winPatterns.some(pattern => {
+                    return pattern.every(index => gameState[index] === currentPlayer);
+                });
+            }
+
+            function resetGame() {
+                gameState = Array(16).fill('');
+                gameActive = true;
+                currentPlayer = 'X';
+                status.textContent = `Ход: ${currentPlayer}`;
+                Array.from(board.children).forEach(cell => {
+                    cell.textContent = '';
+                    cell.classList.remove('X', 'O');
+                });
+            }
+        </script>
+        
+    </body>
+        
+</html>

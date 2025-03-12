@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 4</title>
+         <link rel = "stylesheet" href = "4.css">
+    </head>
+
+    <body> 
+       <div class="checklist-container">
+        <h1>Мой Чеклист</h1>
+        <div class="input-container">
+            <input type="text" id="task-input" placeholder="Добавьте новую задачу...">
+            <button onclick="addTask()">Добавить</button>
+        </div>
+        <ul id="task-list">
+         
+        </ul>
+    </div>
+        <script>
+            function addTask() {
+            const taskInput = document.getElementById('task-input');
+            const taskText = taskInput.value.trim();
+
+            if (taskText === '') {
+                alert('Пожалуйста, введите задачу!');
+                return;
+            }
+
+            const taskList = document.getElementById('task-list');
+
+            const li = document.createElement('li');
+
+            const checkbox = document.createElement('span');
+            checkbox.className = 'checkbox';
+            checkbox.textContent = '☐';
+            checkbox.addEventListener('click', () => toggleTask(li));
+
+            const taskSpan = document.createElement('span');
+            taskSpan.textContent = taskText;
+
+            const deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-button';
+            deleteButton.textContent = '×';
+            deleteButton.addEventListener('click', () => deleteTask(li));
+
+            li.appendChild(checkbox);
+            li.appendChild(taskSpan);
+            li.appendChild(deleteButton);
+
+            taskList.appendChild(li);
+
+            taskInput.value = '';
+        }
+
+        function toggleTask(li) {
+            li.classList.toggle('completed');
+        }
+
+        function deleteTask(li) {
+            li.remove();
+        }
+        </script>
+        
+    </body>
+        
+</html>
