@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 6</title>
+         <link rel = "stylesheet" href = "6.css">
+    </head>
+
+    <body> 
+         <canvas id="animationCanvas" width="400" height="400"></canvas>
+
+         <script> 
+              const animationCanvas = document.getElementById('animationCanvas');
+        const context = animationCanvas.getContext('2d');
+
+        const canvasCenterX = animationCanvas.width / 2;
+        const canvasCenterY = animationCanvas.height / 2;
+        const mainCircleRadius = 100; 
+        const orbitingCircleRadius = 20; 
+        const orbitRadius = mainCircleRadius + orbitingCircleRadius + 20; 
+        let rotationAngle = 0; 
+        let colorIntensity = 1; 
+
+        function renderAnimation() {
+          
+            context.clearRect(0, 0, animationCanvas.width, animationCanvas.height);
+
+           
+            context.beginPath();
+            context.arc(canvasCenterX, canvasCenterY, mainCircleRadius, 0, Math.PI * 2);
+            context.strokeStyle = 'red';
+            context.lineWidth = 2;
+            context.stroke();
+
+            
+            const orbitingCircleX = canvasCenterX + Math.cos(rotationAngle) * orbitRadius;
+            const orbitingCircleY = canvasCenterY + Math.sin(rotationAngle) * orbitRadius;
+
+           
+            context.beginPath();
+            context.arc(orbitingCircleX, orbitingCircleY, orbitingCircleRadius, 0, Math.PI * 2);
+            context.fillStyle = `rgba(255, 0, 0, ${colorIntensity})`;
+            context.fill();
+
+            
+            rotationAngle += 0.02; 
+            colorIntensity -= 0.005; 
+
+          
+            if (colorIntensity <= 0) {
+                colorIntensity = 1;
+            }
+
+       
+            requestAnimationFrame(renderAnimation);
+        }
+
+        
+        renderAnimation();
+         </script>
+    </body>
+
+</html>

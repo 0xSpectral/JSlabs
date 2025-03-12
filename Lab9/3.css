@@ -1,0 +1,21 @@
+  .button-list {
+            display: flex;
+            transform: skewX(-15deg);
+        }
+
+        .button-list a {
+            text-decoration: none;
+            color: #000;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 2px solid blue;
+            background-color: white;
+            transform: skewX(15deg);
+            transition: all 0.3s ease;
+        }
+
+        .button-list a:hover {
+            transform: skewX(15deg) scale(1.2);
+            background-color: rgb(255, 255, 255);
+            z-index: 1;
+        }

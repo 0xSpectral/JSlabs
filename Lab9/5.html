@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 5</title>
+         <link rel = "stylesheet" href = "5.css">
+    </head>
+
+    <body> 
+       <canvas id="myCanvas" width="200" height="200"></canvas>
+       <script> 
+          const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+       
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+    
+        const size = 70;
+
+        
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY - size); 
+        ctx.lineTo(centerX + size, centerY); 
+        ctx.lineTo(centerX, centerY + size); 
+        ctx.lineTo(centerX - size, centerY); 
+        ctx.closePath(); 
+
+        
+        ctx.fillStyle = 'red';
+        ctx.fill();
+
+        ctx.strokeStyle = 'black';
+        ctx.stroke();
+       </script>
+    </body>
+
+</html>
