@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 5</title>
+         <link rel = "stylesheet" href = "5.css">
+    </head>
+
+    <body> 
+         <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab-link active" data-tab="javascript">JavaScript</button>
+            <button class="tab-link" data-tab="jquery">Jquery</button>
+            <button class="tab-link" data-tab="dom">DOM</button>
+            <button class="tab-link" data-tab="css">CSS</button>
+        </div>
+        <div class="tab-content">
+            <div id="javascript" class="tab-pane active">
+                <p><strong>JavaScript</strong> — прототипно-ориентированный сценарный язык программирования. Является реализацией языка ECMAScript.</p>
+                <p>JavaScript обычно используется как встраиваемый язык для программного доступа к объектам приложений. Наиболее широкое применение находит в браузерах как язык сценариев для придания интерактивности веб-страницам.</p>
+            </div>
+            <div id="jquery" class="tab-pane">
+                <p><strong>Jquery</strong> — это быстрая, небольшая и многофункциональная библиотека JavaScript. Она упрощает такие задачи, как обход и манипулирование HTML-документами, обработка событий, анимация и Ajax.</p>
+            </div>
+            <div id="dom" class="tab-pane">
+                <p><strong>DOM</strong> (Document Object Model) — это программный интерфейс для HTML и XML документов. Он предоставляет структурированное представление документа и определяет, как программы могут получать доступ к документу для изменения его структуры, стиля и содержимого.</p>
+            </div>
+            <div id="css" class="tab-pane">
+                <p><strong>CSS</strong> (Cascading Style Sheets) — это язык стилей, используемый для описания внешнего вида документа, написанного на HTML или XML. CSS описывает, как элементы должны отображаться на экране, на бумаге, в речи или на других медиа.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        tabLinks.forEach(tab => {
+            tab.addEventListener('click', () => {
+                
+                tabLinks.forEach(t => t.classList.remove('active'));
+                tabPanes.forEach(p => p.classList.remove('active'));
+
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+    });
+});
+    </script>
+    </body>
+        
+</html>

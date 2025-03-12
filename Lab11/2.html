@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 2</title>
+         <link rel = "stylesheet" href = "2.css">
+    </head>
+
+    <body> 
+        <div class="game-container">
+        <h1>Найди числа по порядку</h1>
+        <div class="timer" id="timer">Время: 30 сек</div>
+        <table id="number-table">
+           
+        </table>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script> 
+                const N = 16; 
+        const M = 30; 
+        let currentNumber = 1;
+        let timer;
+        let timeLeft = M;
+
+        const timerElement = document.getElementById('timer');
+        const tableElement = document.getElementById('number-table');
+        const messageElement = document.getElementById('message');
+
+     
+        const numbers = Array.from({ length: N }, (_, i) => i + 1);
+
+       
+        const shuffledNumbers = shuffle(numbers);
+    
+        createTable(shuffledNumbers);
+
+  
+        startTimer();
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function createTable(numbers) {
+            const size = Math.sqrt(N);
+            for (let i = 0; i < size; i++) {
+                const row = document.createElement('tr');
+                for (let j = 0; j < size; j++) {
+                    const cell = document.createElement('td');
+                    const number = numbers[i * size + j];
+                    cell.textContent = number;
+                    cell.style.fontSize = `${20 + number * 2}px`;
+                    cell.style.color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+                    cell.addEventListener('click', () => handleCellClick(cell, number));
+                    row.appendChild(cell);
+                }
+                tableElement.appendChild(row);
+            }
+        }
+
+        function handleCellClick(cell, number) {
+            if (number === currentNumber) {
+                cell.classList.add('active');
+                currentNumber++;
+                if (currentNumber > N) {
+                    clearInterval(timer);
+                    messageElement.textContent = "Поздравляем! Вы выиграли!";
+                }
+            }
+        }
+
+        function startTimer() {
+            timer = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = `Время: ${timeLeft} сек`;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    messageElement.textContent = "Время вышло! Вы проиграли.";
+                    disableClicks();
+                }
+            }, 1000);
+        }
+
+        function disableClicks() {
+            const cells = document.querySelectorAll('td');
+            cells.forEach(cell => {
+                cell.style.pointerEvents = 'none';
+            });
+        }
+    </script>
+    </body>
+        
+</html>

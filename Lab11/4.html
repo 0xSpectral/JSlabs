@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 4</title>
+         <link rel = "stylesheet" href = "4.css">
+    </head>
+
+    <body> 
+        <div class="calendar">
+        <div class="header">
+            <button id="prev-month">&lt;</button>
+            <h2 id="month-year">Февраль 2020</h2>
+            <button id="next-month">&gt;</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Пн</th>
+                    <th>Вт</th>
+                    <th>Ср</th>
+                    <th>Чт</th>
+                    <th>Пт</th>
+                    <th>Сб</th>
+                    <th>Вс</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+              
+            </tbody>
+        </table>
+    </div>
+    <script> 
+        const monthYearElement = document.getElementById('month-year');
+        const calendarBody = document.getElementById('calendar-body');
+        const prevMonthButton = document.getElementById('prev-month');
+        const nextMonthButton = document.getElementById('next-month');
+
+        let currentDate = new Date(2020, 1); 
+
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            
+            monthYearElement.textContent = `${getMonthName(month)} ${year}`;
+
+        
+            calendarBody.innerHTML = '';
+
+          
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const daysInMonth = lastDay.getDate();
+            const startingDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Пн = 0, Вс = 6
+
+            let date = 1;
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement('tr');
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement('td');
+                    if (i === 0 && j < startingDay) {
+                        cell.textContent = '';
+                    } else if (date > daysInMonth) {
+                        cell.textContent = '';
+                    } else {
+                        cell.textContent = date;
+                        date++;
+                    }
+                    row.appendChild(cell);
+                }
+                calendarBody.appendChild(row);
+                if (date > daysInMonth) break;
+            }
+        }
+
+        function getMonthName(month) {
+            const months = [
+                'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+                'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+            ];
+            return months[month];
+        }
+
+        prevMonthButton.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        nextMonthButton.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+       
+        renderCalendar();
+    </script>
+    </body>
+        
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 1</title>
+         <link rel = "stylesheet" href = "1.css">
+    </head>
+
+    <body> 
+         <div class="autocomplete-container">
+        <h1>Поиск стран</h1>
+        <input type="text" id="country-input" placeholder="Начните вводить название страны...">
+        <ul id="suggestions-list"></ul>
+    </div>
+
+    <script> 
+        const countries = [
+    "Россия", "Украина", "Беларусь", "Казахстан", "США", "Канада", "Германия", "Франция", "Италия", "Испания",
+    "Великобритания", "Китай", "Япония", "Индия", "Бразилия", "Австралия", "Аргентина", "Мексика", "Турция", "Польша"
+        ];
+
+        const input = document.getElementById('country-input');
+        const suggestionsList = document.getElementById('suggestions-list');
+
+        input.addEventListener('input', function () {
+            const inputText = this.value.toLowerCase();
+            const filteredCountries = countries.filter(country => 
+                country.toLowerCase().startsWith(inputText)
+            );
+
+            showSuggestions(filteredCountries);
+        });
+
+        function showSuggestions(filteredCountries) {
+            suggestionsList.innerHTML = '';
+
+            if (filteredCountries.length === 0 || input.value === '') {
+                suggestionsList.style.display = 'none';
+                return;
+            }
+
+            filteredCountries.forEach(country => {
+                const li = document.createElement('li');
+                li.textContent = country;
+                li.addEventListener('click', () => {
+                    input.value = country;
+                    suggestionsList.style.display = 'none';
+                });
+                suggestionsList.appendChild(li);
+            });
+
+            suggestionsList.style.display = 'block';
+        }
+
+        document.addEventListener('click', function (e) {
+            if (e.target !== input) {
+                suggestionsList.style.display = 'none';
+            }
+        });
+    </script>
+    </body>
+        
+</html>

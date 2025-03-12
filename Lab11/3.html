@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang = "ru"> 
+
+    <head> 
+        <meta charset = "UTF-8">
+        <title> 3</title>
+         <link rel = "stylesheet" href = "3.css">
+    </head>
+
+    <body> 
+        <div class="content">
+        <h1>Прокрутите страницу вниз</h1>
+        <p>Это пример текста для прокрутки.</p>
+        <p>Прокрутите вниз, чтобы увидеть попап.</p>
+        <div style="height: 2000px;"></div>
+    </div>
+
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" id="close-popup">&times;</span>
+            <h2>Специальное предложение!</h2>
+            <p>Подпишитесь на нашу рассылку, чтобы получить скидку 10%.</p>
+        </div>
+    </div>
+    <script> 
+
+        const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('close-popup');
+        const scrollTrigger = 500; 
+
+
+        closePopup.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollTrigger) {
+                popup.style.display = 'flex';
+            }
+        });
+        /*
+        //Второй  вариант решения 
+        const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('close-popup');
+        const delay = 5000; 
+
+ 
+        closePopup.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+        setTimeout(() => {
+            popup.style.display = 'flex';
+        }, delay);
+        */
+    </script>
+    </body>
+        
+</html>
